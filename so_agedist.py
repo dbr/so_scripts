@@ -1,6 +1,13 @@
+#!/usr/bin/env python
+"""
+Uses the data scraped into so_userinfo.sqlite3 and makes
+ a graph showing the distribution of age vs reputation.
+"""
 from __future__ import with_statement
 from sqlite3 import dbapi2 as sqlite
 
+# easy_install pygooglechart
+# or http://pygooglechart.slowchop.com/
 import pygooglechart
 
 
