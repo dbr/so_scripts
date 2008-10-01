@@ -1,6 +1,8 @@
 from __future__ import with_statement
 from sqlite3 import dbapi2 as sqlite
 
+import pygooglechart
+
 
 class SoDB:
     def __init__(self):
@@ -70,17 +72,7 @@ def avg(x):
 
 for age, info in countula.items():
     countula[age]['rep_avg'] = int(avg(info['rep_all']))
-    # print "%s, %s, %s, %s" % (age, max(info['rep_all']), min(info['rep_all']), avg(info['rep_all']))
 
-
-#o_age,o_max,o_min,o_avg = [
-#    ",".join(
-#        [str(cur_number) for cur_number in cur_set]
-#    )
-#        for cur_set in [o_age,o_max,o_min,o_avg]
-#]
-
-import pygooglechart
 
 chart = pygooglechart.SimpleLineChart(500, 400)
 
