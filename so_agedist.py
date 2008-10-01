@@ -80,12 +80,13 @@ def avg(x):
 for age, info in countula.items():
     countula[age]['rep_avg'] = int(avg(info['rep_all']))
 
-
+# setup the chart
 chart = pygooglechart.SimpleLineChart(500, 400)
 
 age_min = 1
 age_max = 61
 
+# force the data into a graphable state
 cd = {}
 all_rep = []
 for x in xrange(age_min, age_max):
@@ -98,10 +99,16 @@ for age, info in countula.items():
     except KeyError:
         print "Out of range value!"
 
+outy = [cd[x] for x in xrange(age_min, age_max)]
+
+# Add the labels, grids etc to the chart
 chart.set_axis_labels(pygooglechart.Axis.BOTTOM, xrange(age_min,age_max, 5))
 chart.set_axis_labels(pygooglechart.Axis.LEFT, xrange(0,max(all_rep), max(all_rep) / 10))
 chart.grid = 10
 chart.title = "Stackoverflow.com%20:%20Age%20vs%20Reputation"
-outy = [cd[x] for x in xrange(age_min, age_max)]
+
+# Add the data to the chart
 chart.add_data(outy)
+
+# And get the google charts URL
 print chart.get_url()
