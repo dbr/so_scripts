@@ -47,9 +47,6 @@ class SoDB:
         self.conn = sqlite.connect("so_userinfo.sqlite3")
         self.cursor = self.conn.cursor()
     
-    def __iter__(self):
-        yield "Woop!"
-    
     def create_table(self):
         return False #OH NO YOU DON'T
         query = """CREATE TABLE "main"."Users" (
