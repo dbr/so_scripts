@@ -1,3 +1,9 @@
+print "Don't use this, use the StackOverflow data dump instead!"
+print " http://blog.stackoverflow.com/2009/06/stack-overflow-creative-commons-data-dump/ "
+import sys;sys.exit(1)
+
+# Original script:
+
 import urllib
 from BeautifulSoup import BeautifulSoup as bs
 
